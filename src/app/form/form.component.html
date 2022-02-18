@@ -2,5 +2,16 @@
     <h2>{{ title }}</h2>
     <h3>Component h3</h3>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, esse.</p>
-    <address>{{ text }}</address>
+    
+    <!-- <address>{{ text }}</address> -->
+    
+    <!-- <p>{{ obj | json }}</p> --> <!--Не сохраняет форматирование--> 
+    <!-- <pre>{{ obj | json }}</pre> --> <!--Сохраняет форматирование--> 
+
+    <p>{{ getInfo() }}</p>
+
+    <div>
+        <img src="{{ imgUrl }}">
+    </div>
+
 </div>
