@@ -1,17 +1,27 @@
 <div class="form">
     <h2>{{ title }}</h2>
-    <h3>Component h3</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, esse.</p>
-    
+    <!-- <h3>Component h3</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, esse.</p> -->
     <!-- <address>{{ text }}</address> -->
-    
     <!-- <p>{{ obj | json }}</p> --> <!--Не сохраняет форматирование--> 
     <!-- <pre>{{ obj | json }}</pre> --> <!--Сохраняет форматирование--> 
-
-    <p>{{ getInfo() }}</p>
+    <!-- <p>{{ getInfo() }}</p> -->
 
     <div>
-        <img src="{{ imgUrl }}">
+        <img [src]="imgUrl">
+        <br>
+        <button [disabled]="enableDisable">{{ buttonText }}</button>
+    </div>
+
+    <div class="buttons">        
+        <button (click)="changeTitle()">Change title</button>        
+        <button (click)="title = 'Inline title'">Change title inline</button>
+    </div>
+
+    <div>
+        <!-- <input type="text" (input)="inputHandler($event)" [value]="title"> -->
+        <input type="text" [(ngModel)]="title"> <!--Необходимо подключить FormsModule в app.module.ts-->
+        <!-- <input type="text" [(ngModel)]="title" (ngModelChange)="changeHandler()"> -->  <!--Необходимо подключить FormsModule в app.module.ts-->
     </div>
 
 </div>
