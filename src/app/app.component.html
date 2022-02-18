@@ -1,7 +1,24 @@
 <div class="container">
   <h1>Hello</h1>
+  <hr>
+  <button class="showHideForms" (click)="showHideForms()">Show/Hide forms</button>
+  <hr>
 
-  <app-form></app-form>  
-  <app-form></app-form>
-  <app-form></app-form>
+<!--   <div *ngIf="visible">
+    <app-form></app-form>  
+    <app-form></app-form>
+    <app-form></app-form>
+  </div> -->
+
+  <!-- Реализация с блоком else -->
+  <div *ngIf="visible; else noCards">
+    <app-form></app-form>  
+    <app-form></app-form>
+    <app-form></app-form>
+  </div>
+
+  <ng-template #noCards>
+    <p>Forms are hidden!</p>
+  </ng-template>
+
 </div>
