@@ -1,11 +1,27 @@
 <div class="form">
-    <h2>{{ title }}</h2>
+    <h2 [ngStyle]="
+    {
+        color: title.length < 10 ? 'blue' : 'green'
+    }">{{ title }}</h2>
+
+    <p class="text" [ngClass]="{
+        red: textColor === 'red',
+        blue: textColor === 'blue',
+        green: textColor === 'green'
+    }">{{ text }}</p>
+
     <!-- <h3>Component h3</h3>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, esse.</p> -->
     <!-- <address>{{ text }}</address> -->
     <!-- <p>{{ obj | json }}</p> --> <!--Не сохраняет форматирование--> 
     <!-- <pre>{{ obj | json }}</pre> --> <!--Сохраняет форматирование--> 
     <!-- <p>{{ getInfo() }}</p> -->
+
+    <div class="buttons01">
+        <button (click)="textColor = 'red'">Set red</button>
+        <button (click)="textColor = 'blue'">Set blue</button>
+        <button (click)="textColor = 'green'">Set green</button>
+    </div>
 
     <div>
         <img [src]="imgUrl">

@@ -14,6 +14,7 @@ export class FormComponent implements OnInit
   text: string = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, esse.";
   enableDisable: boolean = false;
   buttonText: string = "Enable";
+  textColor: string = 'black';
 
   /* obj = {
           name: `Bobby`, 
